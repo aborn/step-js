@@ -1,0 +1,25 @@
+{
+  "name": "step-js",
+  "version": "1.0.0",
+  "description": "learning js including node.js and javascript.",
+  "main": "step.js",
+  "scripts": {
+    "test": "node step.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aborn/step-js.git"
+  },
+  "keywords": [
+    "step",
+    "js",
+    "node.js",
+    "javascript"
+  ],
+  "author": "Aborn Jiang",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/aborn/step-js/issues"
+  },
+  "homepage": "https://github.com/aborn/step-js#readme"
+}
