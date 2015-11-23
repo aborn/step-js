@@ -11,8 +11,7 @@ console.log(codePath);
 var filesDir = fs.readdirSync(codePath);
 
 function stdOutput(error, stdout, stderr) {
-    var cw = process.cwd();
-    console.log("-------------------" + cw + "-----------------------")
+    console.log("------------------------------------------");
     if (!util.isNullOrUndefined(error)) {
         console.log(error);
     }
@@ -26,9 +25,9 @@ var projNames = ["appkit-web", "semanticbox", "step-js", "range.js", "popkit",
 filesDir.map(function(filename, index) {
     if (projNames.indexOf(filename) >= 0) {
         var projDir = path.join(codePath, filename);
-        var child = exec("git pull", {
+        var child = exec("pwd & git pull", {
             cwd : projDir
         }, stdOutput);
-        console.log(child.pid)
+        //console.log(child.pid)
     }
 })
