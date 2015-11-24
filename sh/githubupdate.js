@@ -1,4 +1,7 @@
 #!/usr/bin/env node
+/**
+ * fetch all github project source code
+ */
 
 var path  = require('path');
 var fs = require('fs');
@@ -21,7 +24,7 @@ function stdOutput(error, stdout, stderr) {
 
 var projNames = ["appkit-web", "semanticbox", "step-js", "range.js", "popkit",
                  "step-elixir", ".emacs.d", "chosen4chinese", "spaceweb",
-                "appkit-web"];
+                 "appkit-web"];
 
 filesDir.map(function(filename, index) {
     if (projNames.indexOf(filename) >= 0) {
@@ -31,9 +34,9 @@ filesDir.map(function(filename, index) {
         }, stdOutput);
         //console.log(child.pid)
     }
-})
+});
 
 // update emacs configure files.
 exec("pwd & git pull", {
     cwd : path.join(process.env.HOME, ".emacs.d")
-}, stdOutput)
+}, stdOutput);
