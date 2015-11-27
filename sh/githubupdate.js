@@ -25,7 +25,6 @@ function stdOutput(error, stdout, stderr) {
 
 var projNames = ["appkit-web", "semanticbox", "step-js", "range.js", "popkit",
                  "step-elixir", ".emacs.d", "chosen4chinese", "spaceweb",
-                 "appkit-web"
                 ];
 
 filesDir.map(function(filename, index) {
