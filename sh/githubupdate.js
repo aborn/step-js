@@ -1,9 +1,10 @@
 #!/usr/bin/env node
+
 /**
  * fetch all github project source code
  */
 
-var path  = require('path');
+var path = require('path');
 var fs = require('fs');
 var exec = require('child_process').exec;
 var util = require('util');
@@ -24,13 +25,14 @@ function stdOutput(error, stdout, stderr) {
 
 var projNames = ["appkit-web", "semanticbox", "step-js", "range.js", "popkit",
                  "step-elixir", ".emacs.d", "chosen4chinese", "spaceweb",
-                 "appkit-web"];
+                 "appkit-web"
+                ];
 
 filesDir.map(function(filename, index) {
     if (projNames.indexOf(filename) >= 0) {
         var projDir = path.join(codePath, filename);
         var child = exec("pwd & git pull", {
-            cwd : projDir
+            cwd: projDir
         }, stdOutput);
         //console.log(child.pid)
     }
@@ -38,5 +40,5 @@ filesDir.map(function(filename, index) {
 
 // update emacs configure files.
 exec("pwd & git pull", {
-    cwd : path.join(process.env.HOME, ".emacs.d")
+    cwd: path.join(process.env.HOME, ".emacs.d")
 }, stdOutput);
